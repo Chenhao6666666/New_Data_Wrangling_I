@@ -31,4 +31,8 @@ tail(litters_df)
 ```{r}
 skimr::skim(litters_df)
 ```
+## Option to read_csv
+```{r}
+litters_df<-read_csv("/Users/zhengchenhao/Desktop/2025Fall/DS/New_Data_Wrangling_I/data/FAS_litters.csv",skip=10,col_names = FALSE)
+```
 
