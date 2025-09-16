@@ -6,6 +6,7 @@ date: "2025-09-16"
 
 ```{r setup}
 library(tidyverse)
+library(readxl)
 ```
 
 ## Read in some data
@@ -34,5 +35,29 @@ skimr::skim(litters_df)
 ## Option to read_csv
 ```{r}
 litters_df<-read_csv("/Users/zhengchenhao/Desktop/2025Fall/DS/New_Data_Wrangling_I/data/FAS_litters.csv",skip=10,col_names = FALSE)
+```
+
+## Other file formats
+```{r}
+mlb_df<-read_excel("/Users/zhengchenhao/Desktop/2025Fall/DS/New_Data_Wrangling_I/data/mlb11.xlsx")
+mlb_df
+```
+
+### Subset
+```{r}
+mlb_df<-read_excel("/Users/zhengchenhao/Desktop/2025Fall/DS/New_Data_Wrangling_I/data/mlb11.xlsx",range="A1:F7")
+mlb_df
+```
+
+## Read in a SAS file
+```{r}
+library(haven)
+pulse_df<-read_sas("/Users/zhengchenhao/Desktop/2025Fall/DS/New_Data_Wrangling_I/data/public_pulse_data.sas7bdat")
+pulse_df
+```
+
+## Export data
+```{r}
+write_csv(mlb_df,"/Users/zhengchenhao/Desktop/2025Fall/DS/New_Data_Wrangling_I/mlb_subtable.csv")
 ```
 
